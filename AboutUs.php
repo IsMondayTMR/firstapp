@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         
          
         <link rel="stylesheet" href="css/AboutUs.css">
@@ -33,7 +32,7 @@
 
                         <a href="./contacts.php" class="right-header-link">Contacts</a>
                         <a href="./Help.php" class="right-header-link">Help</a>
-                        <a href="./Signin.php" class="right-header-link active">Sign in</a>
+                        <a href="./Signin.php" class="right-header-link ">Sign in</a>
                         <a href="./Join.php" class="right-header-link">Join</a>
                 </div>
         </header>
@@ -140,36 +139,34 @@
 
         <!-- footer -->
    
-        <footer class="footer">
-            <!-- replace with your own email address -->
-            <a href="mailto:bo.an.563641292@gmail.com" class="footer__link">bo.an.563641292@gmail.com<i class="far fa-envelope"></i></a>
-            
-            <ul class="social-list">
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://codepen.io">
-                        <i class="fab fa-codepen"></i>
-                    </a>
+        <footer class="contacts">
+            <?php $array = explode("\n", file_get_contents('info.txt'));?>
+            <ul class="contacts-list">
+                <li class="contacts-list__item">
+                    <p>Company: <?php echo $array[0]?></p>
+                </li>
+                <li class="contacts-list__item">
+                    <p>Address: <?php echo $array[1]?></p>
+                </li>
+                <li class="contacts-list__item">
+                    <p>Phone: <?php echo $array[2]?></p>
+                </li>
+                <li class="contacts-list__item">
+                    <p>Course: <?php echo $array[3]?></p>
                 </li>
 
-                <li class="social-list__item">
-                    <a class="social-list__link" href="http://dribbble.com">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                </li>
-
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://twitter.com">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-
-                <li class="social-list__item">
-                    <a class="social-list__link" href="https://github.com">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
                 
             </ul>
+        
+            <a href="mailto:bo.an.563641292@gmail.com" class="social-list__link"><i class="far fa-envelope"></i></a>
+
+            <a class="social-list__link" href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+
+            <a class="social-list__link" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+
+            <a class="social-list__link" href="https://github.com/IsMondayTMR"><i class="fab fa-github"></i></a>
+    
+
         </footer>
         <script src="js/index.js"></script>
     </body>

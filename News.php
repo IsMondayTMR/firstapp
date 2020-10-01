@@ -8,7 +8,7 @@
         <header>
                 <div class="header-container">
                     <div class="left-header-container">
-                        <a href="index.php" class="left-header-link active">Home</a>
+                        <a href="index.php" class="left-header-link">Home</a>
                         <a href="Products.php" class="left-header-link">Products</a>
                         <a href="News.php" class="left-header-link">News</a>
                         <a href="AboutUs.php" class="left-header-link">About Us</a>

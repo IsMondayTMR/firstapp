@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/styles.css">
+        <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <title>ArtGallary</title>
     </head>
     <body>
@@ -8,7 +9,7 @@
         <header>
             <div class="header-container">
                 <div class="left-header-container">
-                    <a href="./index.php" class="left-header-link active">Home</a>
+                    <a href="./index.php" class="left-header-link">Home</a>
                     <a href="./Products.php" class="left-header-link">Products</a>
                     <a href="./News.php" class="left-header-link">News</a>
                     <a href="./AboutUs.php" class="left-header-link">About Us</a>
@@ -41,7 +42,7 @@
             
             </div>
 
-            <div class="grid-image">
+            <div class="grid-list">
 
                     <a href="" class="grid-card">
                     <img src="./img/bo-an-a.jpg" alt="#" class="grid-card-image">
@@ -63,9 +64,9 @@
                     
                     </a>
 
-                    <a href="" class="grid-card">
+                    <!-- <a href="" class="grid-card">
                         <img src="./img/bo-an-suit.jpg" alt="#" class="grid-card-image">
-                    </a>
+                    </a> -->
 
                     <a href="" class="grid-card">
                         <img src="./img/bo-an-touxiang.jpg" alt="#" class="grid-card-image">
@@ -75,9 +76,7 @@
         </main>
 
         <footer class="contacts">
-            <?php $array = explode("\n", file_get_contents('info.txt'));
-            ?>
-            <!-- replace with your own email address -->
+            <?php $array = explode("\n", file_get_contents('info.txt'));?>
             <ul class="contacts-list">
                 <li class="contacts-list__item">
                     <p>Company: <?php echo $array[0]?></p>
@@ -89,11 +88,21 @@
                     <p>Phone: <?php echo $array[2]?></p>
                 </li>
                 <li class="contacts-list__item">
-                    <p>Course:<?php echo $array[3]?></p>
+                    <p>Course: <?php echo $array[3]?></p>
                 </li>
+
+                
             </ul>
-            <a href="mailto:bo.an.563641292@gmail.com" class="contacts__link">bo.an.563641292@gmail.com<i class="far fa-envelope"></i></a>
-            
+        
+            <a href="mailto:bo.an.563641292@gmail.com" class="social-list__link"><i class="far fa-envelope"></i></a>
+
+            <a class="social-list__link" href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+
+            <a class="social-list__link" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+
+            <a class="social-list__link" href="https://github.com/IsMondayTMR"><i class="fab fa-github"></i></a>
+    
+
         </footer>
         <script src="index.js"></script>
     </body>

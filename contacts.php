@@ -22,7 +22,7 @@
 
                     <a href="./contacts.php" class="right-header-link">Contacts</a>
                     <a href="./Help.php" class="right-header-link">Help</a>
-                    <a href="./Signin.php" class="right-header-link active">Sign in</a>
+                    <a href="./Signin.php" class="right-header-link">Sign in</a>
                     <a href="./Join.php" class="right-header-link">Join</a>
             </div>
         </header>

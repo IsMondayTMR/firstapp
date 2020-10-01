@@ -126,13 +126,52 @@ main{
 
     
 }
+
+:focus {
+    outline: none;
+}
+
+/* img{
+    display: block;
+    max-width: 100%;
+    object-fit: fill;
+}
+.grid-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows:repeat(auto-fit,minmax(450px,450px)) ;
+}
+
+
+.grid-card {
+    background: var(--clr-accent);
+    overflow: hidden;
+}
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.grid-card-image {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}     
+.grid-card-image:hover,
+.grid-card:focus .grid-card-image {
+    transform: scale(1.2);
+    opacity: .5;
+
+} */
+
 img{
-    width: 100%;
-    height: 100%;
+    display: block;
+    max-width: 100%;
     object-fit: cover;
     position: relative;
 }
-.grid-image{
+.grid-list{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows:repeat(auto-fit,minmax(450px,450px)) ;
@@ -142,7 +181,12 @@ img{
 .grid-card{
     overflow: hidden;
 
-}       
+}   
+.grid-card:focus {
+    position: relative;
+    z-index: 2;
+}
+
 .grid-card-image:hover,
 .grid-card:focus .grid-card-image {
     transform: scale(1.2);
@@ -154,6 +198,7 @@ img{
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
 }
+
 
 /* footer */
 .contacts {
@@ -174,7 +219,7 @@ img{
     font-weight: var(--fw-bold);
 }
 
-.fcontacts__link:hover{
+.contacts__link:hover{
     opacity: .7;
 }
 
@@ -191,5 +236,21 @@ img{
     padding: 0;
 }
 .contacts-list__item{
-    margin: 1rem;
+    margin: 4rem;
 }
+
+
+
+.social-list__link{
+    margin: 0 2rem;
+}
+
+.social-list__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+}
+
+.social-list__link:hover {
+    text-decoration: underline;
+}
+
