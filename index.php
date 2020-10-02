@@ -76,24 +76,16 @@
         </main>
 
         <footer class="contacts">
+
             <?php $array = explode("\n", file_get_contents('info.txt'));?>
             <ul class="contacts-list">
+            <?php foreach ($array as $item => $value):?>
                 <li class="contacts-list__item">
-                    <p>Company: <?php echo $array[0]?></p>
-                </li>
-                <li class="contacts-list__item">
-                    <p>Address: <?php echo $array[1]?></p>
-                </li>
-                <li class="contacts-list__item">
-                    <p>Phone: <?php echo $array[2]?></p>
-                </li>
-                <li class="contacts-list__item">
-                    <p>Course: <?php echo $array[3]?></p>
-                </li>
-
-                
+                    <p><?php echo $value?></p>
+                </li>  
+                <?php endforeach; ?> 
             </ul>
-        
+           
             <a href="mailto:bo.an.563641292@gmail.com" class="social-list__link"><i class="far fa-envelope"></i></a>
 
             <a class="social-list__link" href="https://facebook.com"><i class="fab fa-facebook"></i></a>

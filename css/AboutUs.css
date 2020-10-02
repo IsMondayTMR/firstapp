@@ -330,7 +330,7 @@ h3{
     background: #111;
     color: var(--clr--accent);
     text-align: center;
-    padding: 2.5em 0;
+    padding: 1em 0;
     font-size: var(--fs-h3);
 
 }
@@ -353,20 +353,20 @@ h3{
 }
 
 .contacts-list{
-    font-weight: var(--fw-bold);
+    font-weight: bold;
     list-style: none;
     display: flex;
     justify-content: center;
-    margin: 2em 0 0;
     padding: 0;
 }
 .contacts-list__item{
-    margin: 1rem;
+    margin: 0 2rem;
 }
 
-.social-list__link {
-    font-weight: var(--fw-bold);
-    margin: 0 1em;
+
+
+.social-list__link{
+    margin: 0 2rem;
 }
 
 .social-list__link:hover,
@@ -374,6 +374,9 @@ h3{
     opacity: .7;
 }
 
+.social-list__link:hover {
+    text-decoration: underline;
+}
 
 
 

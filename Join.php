@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/signin.css">
-        <title>Sign in</title>
+        <title>Join</title>
     </head>
     <body>
 
