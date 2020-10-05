@@ -1,0 +1,4 @@
+Bo An is manager 
+Peter is employee
+Alex is employee
+Kevin is employee

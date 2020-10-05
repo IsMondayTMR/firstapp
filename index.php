@@ -64,9 +64,9 @@
                     
                     </a>
 
-                    <!-- <a href="" class="grid-card">
+                    <a href="" class="grid-card">
                         <img src="./img/bo-an-suit.jpg" alt="#" class="grid-card-image">
-                    </a> -->
+                    </a>
 
                     <a href="" class="grid-card">
                         <img src="./img/bo-an-touxiang.jpg" alt="#" class="grid-card-image">

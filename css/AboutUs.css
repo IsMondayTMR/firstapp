@@ -297,7 +297,8 @@ h3{
 .portfolio{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows:repeat(auto-fit,minmax(450px,450px)) ;
+    grid-template-rows:repeat(auto-fit,minmax(390px,390px)) ;
+    outline: none;
 }
 
 
@@ -420,4 +421,13 @@ header{
 }
 .active{
     border-bottom: black solid 1px;
+}
+
+@media (min-width: 2400px){
+    .grid-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-rows:repeat(auto-fit,minmax(500px,500px)) ;
+        outline: none;
+    }
 }

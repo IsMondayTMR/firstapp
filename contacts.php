@@ -1,3 +1,16 @@
+<?php session_start(); /* Starts the session */
+/* Check Login form submitted */
+$check = $_SESSION['checked'];
+if(!$check){
+header("location:Signin.php");
+} else{
+}
+if(isset($_POST['Submit'])){
+
+    header("location:logout.php");
+    exit;
+    }
+?>
 <html>
     <head>
         <link rel="stylesheet" href="./css/styles.css">
@@ -28,8 +41,19 @@
             </div>
         </header>
 
-        <main>
-
+        <main class="contacts-page">
+                <ul class="contacts-form">
+                    <?php $array = explode("\n", file_get_contents('Contacts.txt'));?>
+                    <?php foreach ($array as $item => $value):?>
+                        <li class="contacts-form__item">
+                            <p><?php echo $value?></p>
+                        </li>  
+                        <?php endforeach; ?> 
+                </ul>
+            <form action="" method="post" name="Login_Form">
+                <input name="Submit" type="submit" value="Logout" class="Button3"></td>
+            </form>
+           
         </main>
 
         <footer class="contacts">

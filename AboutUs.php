@@ -129,6 +129,10 @@
                     <img src="./img/bo-an-touxiang.jpg" alt="" class="portfolio__img">
                 </a>
 
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="./img/bo-an-suit.jpg" alt="" class="portfolio__img">
+                </a>
+
                 <!-- item 6
                 <a href="#" class="portfolio__item">
                     <img src="img/Gn-0000.jpg" alt="" class="portfolio__img">

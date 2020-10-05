@@ -10,7 +10,7 @@
     --clr--accent:#16e0bd;
     --clr--white:#e6e6e6;
     --clr--blue: #4979ff;
-
+    --clr--lightdark: #8a8a8a;
     --BoxShadow: 0.5em 0.5em 1em rgba(0,0,0,.45),
                 0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
@@ -79,8 +79,7 @@ main{
     border-bottom: black solid 1px;
 }
 .search-container{
-    background-image: url(../img/background.jpg);
-    background-color: #8a8a8a;
+    background-image: linear-gradient(var(--clr--light), var(--clr--lightdark)),url(../img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -174,7 +173,7 @@ img{
 .grid-list{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows:repeat(auto-fit,minmax(450px,450px)) ;
+    grid-template-rows:repeat(auto-fit,minmax(390px,390px)) ;
     outline: none;
 }
 
@@ -251,4 +250,18 @@ img{
 
 .social-list__link:hover {
     text-decoration: underline;
+}
+@media (min-width: 2400px){
+    .grid-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-rows:repeat(auto-fit,minmax(500px,500px)) ;
+        outline: none;
+    }
+}
+.contacts-page{
+    background-color: white;
+}
+.contacts-form{
+
 }
