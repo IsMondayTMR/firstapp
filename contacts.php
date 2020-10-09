@@ -1,15 +1,15 @@
-<?php session_start(); /* Starts the session */
+<?php ///* Starts the session */
 /* Check Login form submitted */
-$check = $_SESSION['checked'];
-if(!$check){
-header("location:Signin.php");
-} else{
-}
-if(isset($_POST['Submit'])){
+// $check = $_SESSION['checked'];
+// if(!$check){
+// header("location:Signin.php");
+// } else{
+// }
+// if(isset($_POST['Submit'])){
 
-    header("location:logout.php");
-    exit;
-    }
+//     header("location:./logout.php");
+//     exit;
+//     }
 ?>
 <html>
     <head>
@@ -50,9 +50,9 @@ if(isset($_POST['Submit'])){
                         </li>  
                         <?php endforeach; ?> 
                 </ul>
-            <form action="" method="post" name="Login_Form">
+            <!-- <form action="" method="post" name="Login_Form">
                 <input name="Submit" type="submit" value="Logout" class="Button3"></td>
-            </form>
+            </form> -->
            
         </main>
 

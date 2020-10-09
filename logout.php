@@ -1,10 +1,11 @@
 <?php session_start(); /* Starts the session */
 session_destroy(); /* Destroy started session */
-header("location:Signin.php");  /* Redirect to login page */exit;
+$_SESSION['checked'] = false;
+header("location:./Signin.php");  /* Redirect to login page */exit;
 ?>
 
 
- <?php session_start(); /* Starts the session */
+ <?php //session_start(); /* Starts the session */
 // /* Check Login form submitted */
 // // $check = false;
 // if(isset($_POST['Submit'])){
