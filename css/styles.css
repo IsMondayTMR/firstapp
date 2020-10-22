@@ -15,19 +15,26 @@
                 0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
-body{
-    margin: 0;
-    padding: 0
-}
-header, main{
+
+header, main,body{
     margin: 0;
     padding: 0;
+
+}
+main *{
+    padding: 0;
+    margin: 0;
+}
+main ul li{
+    padding: 0.5rem;
 }
 header{
     background-color: var(--clr--light);
+    
 }
 main{
-    background-color: var(--clr--dark);
+    background-color: white;
+    color: black;
 }
 /* typography */
 .logo{
@@ -130,39 +137,7 @@ main{
     outline: none;
 }
 
-/* img{
-    display: block;
-    max-width: 100%;
-    object-fit: fill;
-}
-.grid-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-template-rows:repeat(auto-fit,minmax(450px,450px)) ;
-}
 
-
-.grid-card {
-    background: var(--clr-accent);
-    overflow: hidden;
-}
-
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
-}
-
-.grid-card-image {
-    transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
-}     
-.grid-card-image:hover,
-.grid-card:focus .grid-card-image {
-    transform: scale(1.2);
-    opacity: .5;
-
-} */
 
 img{
     display: block;
@@ -199,58 +174,7 @@ img{
 }
 
 
-/* footer */
-.contacts {
-    background: #111;
-    color: var(--clr--accent);
-    text-align: center;
-    padding: 1em 0;
-    font-size: var(--fs-h3);
 
-}
-
-.contacts a { 
-    color: inherit;
-    text-decoration: none;
-}
-
-.contacts__link {
-    font-weight: var(--fw-bold);
-}
-
-.contacts__link:hover{
-    opacity: .7;
-}
-
-.contacts__link:hover {
-    text-decoration: underline;
-}
-
-.contacts-list{
-    font-weight: bold;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-.contacts-list__item{
-    margin: 0 2rem;
-}
-
-
-
-.social-list__link{
-    margin: 0 2rem;
-}
-
-.social-list__link:hover,
-.social-list__link:hover {
-    opacity: .7;
-}
-
-.social-list__link:hover {
-    text-decoration: underline;
-}
 @media (min-width: 2400px){
     .grid-list{
         display: grid;
@@ -259,6 +183,4 @@ img{
         outline: none;
     }
 }
-.contacts-page{
-    background-color: white;
-}
+

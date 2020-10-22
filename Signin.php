@@ -1,6 +1,6 @@
 <?php session_start(); /* Starts the session */
 /* Check Login form submitted */
-$_SESSION['checked'];
+$_SESSION['checked'] ;
     if(isset($_POST['Login'])){
     /* Define username and associated password array */
         $logins = array('Alex' => '123456','username1' => 'password1','username2' => 'password2','admin'=>'1234');
@@ -32,12 +32,14 @@ $_SESSION['checked'];
 <html>
     <head>
         <link rel="stylesheet" href="./css/signin.css">
+        
+        <link rel="stylesheet" href="./css/footer.css">
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <title>Sign in</title>
     </head>
     <body>
-
+    
         <header>
             <div class="header-container">
                 <div class="left-header-container">
@@ -57,11 +59,12 @@ $_SESSION['checked'];
                     <a href="./Help.php" class="right-header-link">Help</a>
                     <a href="./Signin.php" class="right-header-link">Sign in</a>
                     <a href="./Join.php" class="right-header-link">Join</a>
+                    <a href="./Users.php" class="right-header-link">Users</a>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main >
             <?php if($_SESSION['checked'] == false){?>
                 <form action="./Signin.php" method="post" name="Login_Form">
                     <table width="400" text-align="center" cellpadding="5" cellspacing="1" class="Table">
@@ -88,32 +91,44 @@ $_SESSION['checked'];
                     </table>
                 </form>
             <?php } ?>
-            <?php if($_SESSION['checked'] == true){?>
-                        <ul class="contacts-form">
-                            <?php $array = explode("\n", file_get_contents('Contacts.txt'));?>
-                            <?php foreach ($array as $item => $value):?>
-                                <li class="contacts-form__item">
-                                    <p><?php echo $value?></p>
-                                </li>  
-                                <?php endforeach; ?> 
-                        </ul>
+                <?php if($_SESSION['checked'] == true){?>
+                            <ul class="contacts-form">
+                                <?php $array = explode("\n", file_get_contents('Contacts.txt'));?>
+                                <?php foreach ($array as $item => $value):?>
+                                    <li class="contacts-form__item">
+                                        <p><?php echo $value?></p>
+                                    </li>  
+                                    <?php endforeach; ?> 
+                            </ul>
 
-                    <form action="./Signin.php" method="post" name="Logout_Form">
-                        <input name="Logout" type="submit" value="Logout" class="Button3"></td>
-                    </form>
-
-                <?php } ?>   
+                        <form action="./Signin.php" method="post" name="Logout_Form">
+                            <input name="Logout" type="submit" value="Logout" class="Button3"></td>
+                        </form>
+                            
+                    <?php } ?>   
         </main>
 
-        <footer>     
-            <a href="mailto:bo.an.563641292@gmail.com" class="social-list__link"><i class="far fa-envelope"></i></a>
+        <footer class="contacts">
 
-            <a class="social-list__link" href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+                <?php $array = explode("\n", file_get_contents('info.txt'));?>
+                <ul class="contacts-list">
+                <?php foreach ($array as $item => $value):?>
+                    <li class="contacts-list__item">
+                        <p><?php echo $value?></p>
+                    </li>  
+                    <?php endforeach; ?> 
+                </ul>
 
-            <a class="social-list__link" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:bo.an.563641292@gmail.com" class="social-list__link"><i class="far fa-envelope"></i></a>
 
-            <a class="social-list__link" href="https://github.com/IsMondayTMR"><i class="fab fa-github"></i></a>
-        </footer>
+                <a class="social-list__link" href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+
+                <a class="social-list__link" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+
+                <a class="social-list__link" href="https://github.com/IsMondayTMR"><i class="fab fa-github"></i></a>
+
+
+                </footer>
         <script src="index.js"></script>
     </body>
 </html>

@@ -1,3 +1,4 @@
+<?php include_once "./db/db.php"?>
 <html>
     <head>
         <link rel="stylesheet" href="./css/styles.css">
@@ -32,7 +33,50 @@
             </header>
 
             <main>
-                
+              <?php /*$sql = "SELECT * FROM `user_272`;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['first_name'];
+                        }
+                    }
+                    else{
+                        echo "no content";
+                    }*/
+
+              ?>
+                <form action = "./db/adduser.php" method = "POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="FirstName">First Name</label>
+                            <input type="text" class="form-control" id="FirstName" name ="FirstName" placeholder="First Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="Last Name">Last Name</label>
+                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="HomeAddress">Address</label>
+                            <input type="text" class="form-control" id="HomeAddress" name="HomeAddress" placeholder="1234 Main St">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="CellPhone">Cell Phone</label>
+                            <input type="tel" class="form-control" id="CellPhone"  name="Cellphone"placeholder="123-456-7897" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="Homephone">Home phone</label>
+                            <input type="tel" class="form-control" id="Homephone"  name="Homephone" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" placeholder="123-456-7897">
+                        </div>
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
             </main>
 
             <footer class="contacts">
@@ -55,7 +99,7 @@
                 <a class="social-list__link" href="https://github.com/IsMondayTMR"><i class="fab fa-github"></i></a>
 
 
-            </footer>
+                </footer>
         <script src="index.js"></script>
     </body>
 </html>

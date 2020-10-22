@@ -9,7 +9,8 @@
         
          
         <link rel="stylesheet" href="css/AboutUs.css">
-
+        <link rel="stylesheet" href="./css/footer.css">
+        <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <!-- Update these with your own fonts -->
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
 
@@ -34,6 +35,7 @@
                         <a href="./Help.php" class="right-header-link">Help</a>
                         <a href="./Signin.php" class="right-header-link ">Sign in</a>
                         <a href="./Join.php" class="right-header-link">Join</a>
+                        <a href="./Users.php" class="right-header-link">Users</a>
                 </div>
         </header>
 

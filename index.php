@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/footer.css">
         <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <title>ArtGallary</title>
     </head>
@@ -25,6 +26,7 @@
                     <a href="./Help.php" class="right-header-link">Help</a>
                     <a href="./Signin.php" class="right-header-link">Sign in</a>
                     <a href="./Join.php" class="right-header-link">Join</a>
+                    <a href="./Users.php" class="right-header-link">Users</a>
                 </div>
             </div>
         </header>

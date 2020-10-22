@@ -1,0 +1,11 @@
+CREATE TABLE user_272 (
+   id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+   date datetime not null,
+   first_name varchar(255) not null,
+   last_name varchar(255) not null,
+   home_address varchar(255),
+   home_phone INT(11),
+   cell_phone INT(11)
+);
+
+insert into user_272 (date, first_name,last_name,home_address,home_phone,cell_phone) VALUES ('2020-10-22 9:04:02','Bo','An','123 ABC ave','5303026666','1234567890');
