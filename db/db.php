@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "boan56364129240429.ipagemysql.com";
+$username = "ismondaytmr";
+$password = "Tmdsb!@213";
 $dbName = "272db";
 
 // Create connection
@@ -11,5 +11,4 @@ $dbName = "272db";
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-
 ?>

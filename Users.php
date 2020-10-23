@@ -1,8 +1,16 @@
-<?php include_once "./db/db.php"?>
+<?php include_once "./db/db.php";
+session_start();
+$result_array = [];
+$click = false;
+if(isset($_POST['search'])) { 
+    $click = true;
+} 
+?>
 <html>
     <head>
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/footer.css">
+        <link rel="stylesheet" href="./css/grid.css">
         <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <title>News</title>
     </head>
@@ -33,50 +41,72 @@
             </header>
 
             <main>
-              <?php /*$sql = "SELECT * FROM `user_272`;";
-                    $result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
-
-                    if($resultCheck > 0){
-                        while($row = mysqli_fetch_assoc($result)){
-                            echo $row['first_name'];
-                        }
-                    }
-                    else{
-                        echo "no content";
-                    }*/
-
-              ?>
-                <form action = "./db/adduser.php" method = "POST">
+              
+                <form action = "./db/adduser.php" method = "POST" >
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="FirstName">First Name</label>
-                            <input type="text" class="form-control" id="FirstName" name ="FirstName" placeholder="First Name">
+                            <input type="text" class="form-control" id="FirstName" name ="FirstName" placeholder="First Name" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="Last Name">Last Name</label>
-                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
+                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="HomeAddress">Address</label>
-                            <input type="text" class="form-control" id="HomeAddress" name="HomeAddress" placeholder="1234 Main St">
+                            <input type="text" class="form-control" id="HomeAddress" name="HomeAddress" placeholder="1234 Main St" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="CellPhone">Cell Phone</label>
-                            <input type="tel" class="form-control" id="CellPhone"  name="Cellphone"placeholder="123-456-7897" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
+                            <input type="tel" class="form-control" id="CellPhone"  name="Cellphone"placeholder="123-456-7897" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" required>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="Homephone">Home phone</label>
-                            <input type="tel" class="form-control" id="Homephone"  name="Homephone" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" placeholder="123-456-7897">
+                            <input type="tel" class="form-control" id="Homephone"  name="Homephone" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" placeholder="123-456-7897" required>
                         </div>
 
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <input type="submit" class="btn btn-primary" value = "add" ></input>
+                    <br>
+
+                    
                 </form>
+
+                <form action = "./db/searchuser.php" method = "POST">
+                        <input type="search" placeholder="Enter name or keywords you want to search" name ="search"></input>
+                        <input type="submit" class="btn btn-primary" value = "search" name ="button"></input>
+                </form>
+
+                <div class="row">
+
+                    
+                    <div class="col-4">first name</div>
+                    <div class="col-4">last name</div>
+                    <div class="col-4">home address</div>
+                    <div class="col-4">home phone</div>
+                    <div class="col-4">cell phone</div>
+                </div>
+                <?php if((!isset($_session['result']))){
+                                $result_array = $_SESSION['result'] ;
+                            }
+                            ?>
+                <?php if(isset($result_array)):?>
+                    <?php foreach ($result_array as $item => $value):?>
+                        <div class="row">
+                            <div class="col-4"><?php echo $value['first_name']?></div>
+                            <div class="col-4"><?php echo $value['last_name']?></div>
+                            <div class="col-4"><?php echo $value['home_address']?></div>
+                            <div class="col-4"><?php echo $value['home_phone']?></div>
+                            <div class="col-4"><?php echo $value['cell_phone']?></div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>  
+                    
+                        
             </main>
 
             <footer class="contacts">
