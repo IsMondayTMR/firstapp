@@ -17,7 +17,7 @@
         // <?php foreach ($array as $item => $value)
     }
     else{
-        echo "no content";
+
     }
     $_SESSION['result'] = $result_array;
     header ("Location:../Users.php?add=success");

@@ -12,7 +12,7 @@ if(isset($_POST['search'])) {
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/grid.css">
         <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
-        <title>News</title>
+        <title>Users</title>
     </head>
     <body>
 
@@ -77,33 +77,34 @@ if(isset($_POST['search'])) {
                 </form>
 
                 <form action = "./db/searchuser.php" method = "POST">
-                        <input type="search" placeholder="Enter name or keywords you want to search" name ="search"></input>
+                        <input type="search" placeholder="e.g.: 1234 Main St" name ="search"></input>
                         <input type="submit" class="btn btn-primary" value = "search" name ="button"></input>
                 </form>
 
-                <div class="row">
-
-                    
-                    <div class="col-4">first name</div>
-                    <div class="col-4">last name</div>
-                    <div class="col-4">home address</div>
-                    <div class="col-4">home phone</div>
-                    <div class="col-4">cell phone</div>
-                </div>
+               
                 <?php if((!isset($_session['result']))){
                                 $result_array = $_SESSION['result'] ;
                             }
                             ?>
                 <?php if(isset($result_array)):?>
-                    <?php foreach ($result_array as $item => $value):?>
+                    <?php if(!empty($result_array)):?>
                         <div class="row">
-                            <div class="col-4"><?php echo $value['first_name']?></div>
-                            <div class="col-4"><?php echo $value['last_name']?></div>
-                            <div class="col-4"><?php echo $value['home_address']?></div>
-                            <div class="col-4"><?php echo $value['home_phone']?></div>
-                            <div class="col-4"><?php echo $value['cell_phone']?></div>
+                        <div class="col-4">first name</div>
+                        <div class="col-4">last name</div>
+                        <div class="col-4">home address</div>
+                        <div class="col-4">home phone</div>
+                        <div class="col-4">cell phone</div>
                         </div>
-                    <?php endforeach; ?>
+                        <?php foreach ($result_array as $item => $value):?>
+                            <div class="row">
+                                <div class="col-4"><?php echo $value['first_name']?></div>
+                                <div class="col-4"><?php echo $value['last_name']?></div>
+                                <div class="col-4"><?php echo $value['home_address']?></div>
+                                <div class="col-4"><?php echo $value['home_phone']?></div>
+                                <div class="col-4"><?php echo $value['cell_phone']?></div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>  
                 <?php endif; ?>  
                     
                         
