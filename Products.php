@@ -72,7 +72,7 @@ if(isset($_COOKIE['most_visited_array'])){
                             <?php endforeach; ?> 
                     </ul>
 <!-- previous 5 visited site -->
-                    <h3>last five visited:</h3>
+                <a href = "./visitedpage/visited.php" class="visit" >last five visited(click here):</a>
                     <?php foreach ($last_visited_array as $item => $value):?>
                         <li class="col-4">
 
@@ -81,7 +81,7 @@ if(isset($_COOKIE['most_visited_array'])){
                         </li>  
                     <?php endforeach; ?> 
 <!-- five most visited site -->
-                    <h3>five most visited:</h3>
+                <a href = "./visitedpage/visited.php" class="visit" >five most visited(click here):</a>
 
                     <?php $i=0?>
                     <?php foreach($sort_array as $item => $value):?>
