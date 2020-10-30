@@ -9,13 +9,14 @@
         $last_visited_array = (array)$last_visited_array;
         
     }
-    array_push($last_visited_array,$model_id);
+    if(!in_array($model_id , $last_visited_array)){
+        array_push($last_visited_array,$model_id);}
     if(count($last_visited_array)>5){
         // print_r("larger than 5");
         array_shift($last_visited_array);
     }
     $json = json_encode($last_visited_array);
-    setcookie('a', $json, time() + (3600),'/');
+    setcookie('a', $json, time() + (86400*30),'/');
 
     if(isset($_COOKIE['most_visited_array'])){
         $D_most_visited_array = $_COOKIE['most_visited_array'];
@@ -30,7 +31,7 @@
         // print_r($most_visited_array);
     }
     $most_json = json_encode($most_visited_array);
-    setcookie('most_visited_array', $most_json, time() + (3600),'/');
+    setcookie('most_visited_array', $most_json, time() + (86400*30),'/');
 ?>
 
 <html>
@@ -49,7 +50,7 @@
               
                 <a href = "../Products.php">Back</a>
                 <img 
-                    src ="../img/bo-an-a.jpg" 
+                    src ="../img/bo-an-touxiang.jpg" 
                     style = 
                     "display: block;
                     max-width: 100%;
@@ -57,8 +58,9 @@
                     object-fit: cover;
                     position: relative;"
                 />  
-                <h2>Mage Stuff</h2>
-                <p>from WOW</p>     
+                <h2>Digital Head Sculpting</h2>
+                <h3>Description:</h3>    
+                <p>none</p>      
             </main>
 
 

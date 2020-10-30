@@ -3,6 +3,7 @@ $last_visited_array = [];
 $data = [];
 $most_visited_display = [];
 $highest = 0;
+
 if(isset($_COOKIE['a'])){
     $data = $_COOKIE['a'];
     $data = stripslashes($data);
@@ -17,12 +18,11 @@ if(isset($_COOKIE['most_visited_array'])){
     $new_most_visited_array = json_decode($most_data,true);
     $sort_array = $new_most_visited_array;
     arsort($sort_array);
-    
-    
+ 
 }else{
     $most_visited_array = array('model1' => 0,'model2' => 0,'model3' => 0,'model4' => 0,'model5' => 0,'model6' => 0,'model7' => 0,'model8' => 0,'model9' => 0,'model10' => 0);
     $json = json_encode($most_visited_array);
-    setcookie('most_visited_array', $json, time() + (3600),'/');
+    setcookie('most_visited_array', $json, time() + (86400*30),'/');
 }
 ?>
 
@@ -82,16 +82,18 @@ if(isset($_COOKIE['most_visited_array'])){
                     <?php endforeach; ?> 
 <!-- five most visited site -->
                     <h3>five most visited:</h3>
+
                     <?php $i=0?>
                     <?php foreach($sort_array as $item => $value):?>
-                     
                         <?php if($i<5):?>
-                            <li class="col-4">
-                            <a href="./product/<?=$item?>.php"><?php echo $item?></a>
-                            <p> price: $29.99</p>
-                            <p>visit : <?php echo $value;?></p>
-                            </li>  
-                            <?php $i+=1?>
+                                <?php if($value>0):?>
+                                    <li class="col-4">
+                                        <a href="./product/<?=$item?>.php"><?php echo $item?></a>
+                                        <p> price: $29.99</p>
+                                        <p>visit : <?php echo $value;?></p>
+                                    </li>  
+                                <?php $i+=1;?>
+                            <?php endif;?>
                         <?php endif;?>
                     <?php endforeach; ?> 
             </main>
