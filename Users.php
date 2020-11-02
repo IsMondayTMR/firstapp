@@ -11,6 +11,7 @@ if(isset($_POST['search'])) {
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/grid.css">
+        <link rel="stylesheet" href="./css/button.css">
         <script src="https://kit.fontawesome.com/58185f11b0.js" crossorigin="anonymous"></script>
         <title>Users</title>
     </head>
@@ -63,24 +64,32 @@ if(isset($_POST['search'])) {
                             <input type="tel" class="form-control" id="CellPhone"  name="Cellphone"placeholder="123-456-7897" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" required>
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6" >
                             <label for="Homephone">Home phone</label>
                             <input type="tel" class="form-control" id="Homephone"  name="Homephone" pattern="^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" placeholder="123-456-7897" required>
                         </div>
 
 
                     </div>
-                    <input type="submit" class="btn btn-primary" value = "add" ></input>
+                    <div class = "btn-div">
+                        <input type="submit" class="btn btn-primary" value = "add" ></input>
+                        </div>
                     <br>
 
                     
                 </form>
 
                 <form action = "./db/searchuser.php" method = "POST">
-                        <input type="search" placeholder="e.g.: 1234 Main St" name ="search"></input>
-                        <input type="submit" class="btn btn-primary" value = "search" name ="button"></input>
+                        <div class="form-group col-md-6">
+                            <input type="search" placeholder="e.g.: 1234 Main St" name ="search"></input>
+                        </div>
+                        <div class = "btn-div">
+                            <input type="submit" class="btn btn-primary" value = "search" name ="button" class ="btn"></input>
+                        </div>
+                       
                 </form>
-
+                
+                <a href="./allUsers.php" class = "visit">all users(click here)</a>
                
                 <?php if((!isset($_session['result']))){
                                 $result_array = $_SESSION['result'] ;
@@ -106,7 +115,7 @@ if(isset($_POST['search'])) {
                         <?php endforeach; ?>
                     <?php endif; ?>  
                 <?php endif; ?>  
-                    
+                
                         
             </main>
 
